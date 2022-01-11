@@ -1,38 +1,311 @@
-.App {
+.app {
+  background: #000000;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1px;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+.navbar {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.links {
+  /* background-color: #000000; */
+  /* background-image: linear-gradient(to bottom, #0003, transparent); */
+  border-bottom: 1px solid rgba(221, 187, 187, 0.2);
+  font-size: 1.5rem;
+  width: 350px;
+}
+.links > a {
+  color: rgb(172, 174, 175);
+  padding: 0.75em;
   text-align: center;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.links > a:hover {
+  /* background: #000000; */
+  color: rgb(231, 232, 233);
+}
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: -50px;
+  margin-inline-end: 14px;
+  padding: 8px;
+  border-bottom: 1px solid rgba(221, 187, 187, 0.2);
+}
+.filter input {
+  width: 200px;
+  border-radius: 10px;
+  padding: 0px 20px;
+  margin: 0 10px;
+}
+img {
+  -webkit-box-reflect: below 5px
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.featured_wrapper {
+  position: relative;
+}
+.featured_wrapper img {
+  width: 100%;
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+}
+.title_wrapper {
+  position: absolute;
+  width: 80%;
+  left: 1rem;
+  bottom: 2rem;
+  padding: 20px 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+}
+.title_wrapper h1 {
+  width: 70%;
+  font-weight: 800;
+}
+.button {
+  margin-top: 10px;
+  background: #fff !important;
+  color: #f40612 !important;
+  font-size: 18px;
+  padding: 0.5rem 3rem;
+  outline: none;
+
+  border: solid;
+  border-radius: 20px;
+}
+.button:hover {
+  background: #f40612 !important;
+  color: #fff !important;
+}
+.container {
+  padding-bottom: 3rem;
+  margin: 0 auto;
+}
+.imge {
+  -webkit-box-reflect: below 5px
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+}
+.last {
+  margin-top: 0.5rem;
+}
+.last p {
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 5px 0px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  margin-top: 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: transparent;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.container .card .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+
+.container .card .icon .imge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #000000;
+}
+
+.container .card .slide {
+  width: 200px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.container .card .slide.slide1 {
+  position: relative;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  z-index: 1;
+  transition: 0.7s;
+  transform: translateY(100px);
 }
 
-.App-link {
-  color: #61dafb;
+.container .card:hover .slide.slide1 {
+  transform: translateY(0px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container .card .slide.slide2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.8s;
+  transform: translateY(-100px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.container .card:hover .slide.slide2 {
+  transform: translateY(0);
+}
+
+.container .card .slide.slide2::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  bottom: 15px;
+  left: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000;
+}
+
+.container .card .slide.slide2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #21ecaf;
+}
+
+.container .card .slide.slide2 .content h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #dbd94a;
+}
+.Liste {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 -12px;
+}
+
+.logo {
+  width: 100px;
+  height: 65px;
+  margin-inline: 80px;
+}
+.add {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.ajout {
+  width: 200px;
+  height: 250px;
+}
+.slider-slide > img {
+  width: 40% !important;
+  border-radius: 50px;
+  display: block;
+  margin: 0 auto !important;
+  border: 3px solid rgb(255, 94, 0);
+  box-shadow: 0px 5px 80px red;
+  transform: translate(0%, 0%) !important;
+}
+.slider {
+  box-sizing: border-box;
+  display: block;
+  height: inherit;
+  position: relative;
+  width: 40% !important;
+  margin: 0 auto !important;
+}
+
+/* -------------media---------------- */
+@media screen and (max-width: 990px) {
+  .logo {
+    margin-inline: -9px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 836px) {
+  .logo {
+    margin-inline: -29px;
+    width: 80px;
+  }
+  .links {
+    font-size: 1rem;
+    width: 244px;
+    border-bottom: 0px solid rgba(221, 187, 187, 0.2);
+  }
+  .filter {
+    border-bottom: 0px solid rgba(221, 187, 187, 0.2);
+    width: 294px;
+  }
+  .filter input {
+    width: 156px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo {
+    margin-top: -57px;
+    margin-inline: -65px;
+  }
+  .links {
+    margin-top: 50px;
+  }
+  .filter {
+    margin-top: 50px;
+    margin-inline: -7px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .logo {
+    margin-top: -3px;
+    margin-inline: 245px;
+    width: 124px;
+    height: 90px;
+  }
+  .links {
+    margin-top: 1px;
+    font-size: 1rem;
+    width: 235px;
+  }
+  .filter {
+    margin-top: -3px;
+    margin-inline: 7px;
+    width: 281px;
+  }
+  .filter input {
+    width: 104px;
   }
 }
